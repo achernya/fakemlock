@@ -13,7 +13,13 @@
 // limitations under the License.
 
 // Sample usage
-int main(int argc, char* argv[]) {
+#include <stdio.h>
+
+#include "fakemlock.h"
+
+#define UNUSED __attribute__((unused))
+
+int main(int argc UNUSED, char* argv[] UNUSED) {
   int ret = fakemlock();
   if (ret < 0) {
     perror("fakemlock");
